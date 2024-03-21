@@ -75,15 +75,17 @@ const MovieAddScreen = () => {
         <TextInput
           placeholder="Search..."
           style={{
-            backgroundColor: "white",
+            backgroundColor: "#F1F1F1",
             width: "90%",
             height: height * 0.05,
-            margin: 10,
-            padding: 10,
-            borderRadius: 10,
-            borderColor: "black",
-            borderWidth: 1,
+            margin: width * 0.03,
+            paddingLeft: width * 0.05,
+            paddingRight: width * 0.05,
+            borderRadius: 20,
+            fontWeight: 'bold',
+            fontSize: width * 0.04
           }}
+          place
           onChangeText={(text) => {
             setQuery(text);
           }}
