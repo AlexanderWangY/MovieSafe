@@ -77,7 +77,7 @@ const Home = () => {
           width: "100%",
           flex: 9.5,
           alignItems: "center",
-          height: '100%'
+          height: "100%",
         }}
       >
         {movieArray.length === 0 ? (

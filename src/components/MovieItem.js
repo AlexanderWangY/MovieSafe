@@ -47,7 +47,7 @@ const MovieItem = ({ movieId, movieName }) => {
           backgroundColor: "rgba(202, 240, 248, 0.41)",
           width: width * 0.9,
           height: height * 0.1,
-          borderRadius: "10%",
+          borderRadius: 10,
           flexDirection: "row",
           marginBottom: width * 0.02,
         }}
@@ -106,7 +106,7 @@ const MovieItem = ({ movieId, movieName }) => {
           backgroundColor: "rgba(202, 240, 248, 0.41)",
           width: width * 0.9,
           height: height * 0.1,
-          borderRadius: "10%",
+          borderRadius: 10,
           flexDirection: "row",
           marginBottom: width * 0.02,
         }}
