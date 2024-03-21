@@ -21,18 +21,14 @@ const MovieItem = ({ movieId, movieName }) => {
   useEffect(() => {
     const fetchData = async () => {
       const searchQuery = await movieName.replace(/ /g, "%20");
-      console.log(searchQuery);
       const movieDataRaw = await fetch(
         `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&primary_release_year=545611&page=1`,
         options
       );
       const movieData = await movieDataRaw.json();
 
-      console.log(movieData);
-
       for (const movie of movieData.results) {
         if (movie.id == movieId) {
-          console.log("Found the right " + movieName);
           setImgUrl(movie.poster_path);
           setYear(movie.release_date.substring(0, 4));
           setLoaded(true);

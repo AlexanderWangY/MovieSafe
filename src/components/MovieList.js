@@ -1,19 +1,22 @@
 import React from 'react'
-import { Text, View, ScrollView } from 'react-native'
+import { Text, View, ScrollView, FlatList } from 'react-native'
 import MovieItem from './MovieItem'
 
 const MovieList = ({ movieArray }) => {
     return (
-        <ScrollView
-            contentContainerStyle={{
-                alignItems: 'center',
-            }}
-            scrollEnabled={false}
-        >
-            {movieArray.map((item, index) => (
-                <MovieItem movieId={item.id} movieName={item.name} key={index} />
-            ))}
-        </ScrollView>
+        <FlatList
+        contentContainerStyle={{
+          alignItems: 'center',
+        }}
+        style={{
+            width: '100%'
+        }}
+        data={movieArray}
+        keyExtractor={(item, index) => index.toString()} // Use index as key
+        renderItem={({ item }) => (
+          <MovieItem movieId={item.id} movieName={item.name} />
+        )}
+      />
     )
 }
 

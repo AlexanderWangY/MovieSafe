@@ -24,7 +24,7 @@ const HomeLayout = () => {
             <Stack.Screen name="movieadd" options={{
                 title: 'Add a New Movie',
                 headerLeft: () => (
-                    <Pressable onPress={() => { router.back() }}>
+                    <Pressable onPress={() => { router.replace("/home") }}>
                         <Text style={{ color: 'white', fontSize: width * 0.04, marginBottom: height * 0.005 }}>Cancel</Text>
                     </Pressable>
                 ),

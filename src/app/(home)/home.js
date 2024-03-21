@@ -19,32 +19,17 @@ const Home = () => {
   const [movieArray, setMovieArray] = useState([]);
 
   const handleAddMovie = () => {
-    router.push("/movieadd");
+    router.replace("/movieadd");
   };
 
   useEffect(() => {
     const saveSomeMovies = async () => {
-      await clearMovies();
-      await saveMovie("The Shawshank Redemption", "278");
-      await saveMovie("The Godfather", "238");
-      await saveMovie("The Dark Knight", "155");
-      await saveMovie("POOP", "240");
-      await saveMovie("Inception", "27205");
-      await saveMovie("A Silent Voice: The Movie", "378064");
-
       const movies = await getMovies();
-
-      console.log(movies);
       setMovieArray(movies);
     };
 
     saveSomeMovies();
   }, []);
-
-  useEffect(() => {
-    console.log("Setting movie array");
-    console.log(movieArray);
-  }, [movieArray]);
 
   return (
     <View style={styles.main_container}>
@@ -92,6 +77,7 @@ const Home = () => {
           width: "100%",
           flex: 9.5,
           alignItems: "center",
+          height: '100%'
         }}
       >
         {movieArray.length === 0 ? (
